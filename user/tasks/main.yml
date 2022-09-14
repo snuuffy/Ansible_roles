@@ -1,0 +1,17 @@
+---
+- name: Group Create
+  group:
+    name: panda
+    state: present
+
+- name: User create
+  user:
+   name: panda
+   shell: /bin/bash
+   groups: panda,sudo
+
+- name: Copy Authorized_key
+  ansible.posix.authorized_key:
+    user: panda
+    state: present
+    key: "{{ lookup('authorized_key', /home/vagrant/.ssh/authorized_key}}"

@@ -1,0 +1,9 @@
+---
+tasks:
+  packages:
+   - name: Install unzip and net-tools
+     package:
+      name: 
+       - unzip
+       - net-tools
+      state: present
