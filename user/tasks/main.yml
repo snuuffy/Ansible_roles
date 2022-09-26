@@ -14,4 +14,4 @@
   ansible.posix.authorized_key:
     user: panda
     state: present
-    key: "{{ lookup('file', /home/vagrant/.ssh/authorized_keys) }}"
+    key: "{{ lookup('file', '/home/vagrant/.ssh/authorized_keys') }}"
