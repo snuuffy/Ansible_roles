@@ -10,8 +10,8 @@
     dest: "{{ deployment_path }}"
     version: "{{ git_branch }}"
 
-- name: run docker-compose
-  community.docker.docker_compose:
+- name: Run `docker-compose up`
+  docker_compose:
     project_src: "{{ deployment_path }}"
     build: yes
     debug: yes
